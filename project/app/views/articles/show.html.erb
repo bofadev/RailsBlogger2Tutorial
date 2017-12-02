@@ -16,6 +16,9 @@
 <% end %>
 
 <p>---</p>
+<%= image_tag @article.image.url %>
+
+<p>---</p>
 <h3>Comments (<%= @article.comments.count %>)</h3>
 
 <%= render partial: "comments/form" %>

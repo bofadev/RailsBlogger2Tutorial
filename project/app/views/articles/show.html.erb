@@ -9,6 +9,11 @@
 <p>---</p>
 <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>
 
+<p>---</p>
+<h3>Tags</h3>
+<% @article.tags.each do |tag| %>
+	<%= link_to tag.name, tag_path(tag) %>
+<% end %>
 
 <p>---</p>
 <h3>Comments (<%= @article.comments.count %>)</h3>

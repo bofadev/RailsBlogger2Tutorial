@@ -8,7 +8,9 @@
 <% end %>
 </ul>
 
+<% if logged_in? %>
 <p>---</p>
 <%= link_to "Create New", new_article_path %>
+<% end %>
 <p>---</p>
 <%= link_to "Tags", tags_path %>

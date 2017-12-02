@@ -8,5 +8,17 @@
 <%= link_to "Edit", edit_article_path(@article) %>
 <p>---</p>
 <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>
+
+
+<p>---</p>
+<h3>Comments (<%= @article.comments.count %>)</h3>
+
+<%= render partial: "comments/form" %>
+
+<% @article.comments.each do |c|  %>
+	<p>[By: <%= c.author_name %> (<%= distance_of_time_in_words(c.created_at, Time.now)%> ago)]</p>
+	<p><%= c.body %></p>
+<% end %>
+
 <p>---</p>
 <%= link_to "Back To Articles", articles_path %>
